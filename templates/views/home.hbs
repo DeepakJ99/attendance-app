@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href = '/css/index.css' rel = 'stylesheet'>
+    <link href = '/css/old-index.css' rel = 'stylesheet'>
+    <link rel = "stylesheet" href = "/css/animate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {{>linkToFonts}}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+</head>
+<body onload="typeWriter()">
+    {{>header}}
+    <div class="main">
+        <div id = "login-instead"  onclick = "showLogin()">Login</div>
+                <div id="left">While you focus on learning..<br></div>
+                <div id="right">
+                    <div class="welcome">
+                        <div style="font-size:25px;color:lightblue;font-weight:bold">Welcome to presenc</div>
+                        A tool that helps you bunk classes.
+                    </div>
+                    <form class="register-form" method = "POST" id="regForm" action = "register-a-user">
+                        <div style="margin:30px;margin-left:10px;color:white;font-size:20px;text-align:left;">Register here..</div>
+                        <div class="tab">
+                            <p><input placeholder="First Name: Harry" oninput="this.className = ''" name="fname"></p>
+                            <p><input placeholder="Last Name: Potter" oninput="this.className = ''" name="lname"></p>
+                        </div>
+                        <div class="tab">
+                          <div class="reg-2" style="display:grid;grid-template-columns: 20% 40% 20%; margin:10px; color:white">
+                            <div><h6 style="color:white;font-size:20px;display:inline">I am a..   </h6> </div>
+                            <div style="display:flex;justify-content: center;">
+                                <input type="radio" value="teacher" name="occup" checked> Teacher
+                              <input type="radio" value="student" name="occup"> Student</div>
+             
+                          </div>
+                            <p><input placeholder="Institute ID: harry-Gryffindor" oninput="this.className = ''" name="ID"></p>
+                       </div>
+                       <div class="tab">
+                            <p><input placeholder="Mobile Number: 9876543210" oninput="this.className = ''" name="mno" type="number"></p>
+                            <p><input placeholder="Email: harryPotter@hogwarts.com" oninput="this.className = ''" name="email" type="email"></p>
+                       </div>
+                      <div class="tab">
+                           <p><input placeholder="Password: like 'avAdaKed@Vra'" oninput="this.className = ''" name="pword" type="password"></p>
+                           <p><input placeholder="Confirm Password." oninput="this.className = ''" name="cpword" type="password"></p>
+                      </div>
+                      <div class = "buttonsPrevNext">
+                         <i id = "prevBtn" onclick="nextPrev(-1)" class="fa fa-arrow-circle-left"></i>
+                          <i id = "nextBtn" onclick="nextPrev(1)"class="fa fa-arrow-circle-right"></i>
+
+                      </div>
+                      {{{result}}}
+                </form>
+            </div>
+        </div>
+        
+        <form id = "loginForm" action = "/login" method="POST" >
+        <span><input type = "text" placeholder="email" name = "email" required></span>
+        <span> <input type = "password" name = "password" placeholder = "password" required></span>
+        <span>{{{loginResult}}}</span>
+        <div id = "submit-login-form"><button type= "submit">Submit</button></div>
+        </form>
+        
+        {{>footer}}
+</body>
+<script src = '/js/home.js'></script>
+<script src = '/js/index.js'></script>
+</html>

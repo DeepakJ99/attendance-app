@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href = '/css/index.css' rel = 'stylesheet'>
+    <link href = '/css/old-index.css' rel = 'stylesheet'>
+    <link rel = "stylesheet" href = "/css/animate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {{>linkToFonts}}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher</title>
+    <style>
+        header{
+            box-shadow:0px 0px 10px 10px #ebebeb;
+        }
+        body{
+            background: none;
+        }
+    </style>
+</head>
+<body>
+    {{>header}}
+    <div id="profile-tab">{{user}}</div>
+    <button id = "slideInTT" onclick="showTimeTable()"><h1 id = "slideInTT-btn">TimeTable</h1></button>
+    <nav id = "tt-nav">
+        <table id = "timetable">
+
+        </table>
+        <table id = "edit-timetable">
+            <tr>
+            <th>
+            </th>
+            <th>Slot1
+            </th>
+            <th>Slot2
+            </th>
+            <th>Slot3
+            </th>
+            <th>Slot4
+            </th>
+            <th>Slot5
+            </th>
+            <th>Slot6
+            </th>
+            <th>Slot7
+            </th>
+            </tr>
+
+            <form id="TimeTableForm" method="POST" action="newtimetable"> 
+            <tr>
+            <td id="day">Monday
+            </td>
+            <td>
+            <input type="text" name = "m1">
+            </td>
+            <td>
+            <input type="text" name= "m2" >
+            </td>
+            <td>
+            <input type="text" name="m3">
+            </td>
+            <td>
+            <input type="text" name="m4">
+            </td>
+            <td>
+            <input type="text" name="m5">
+            </td>
+            <td>
+            <input type="text" name="m6">
+            </td>
+            <td>
+            <input type="text" name="m7">
+            </td>
+            </tr>
+            <tr>
+            <td id="day">Tuesday
+            </td>
+            <td>
+            <input type="text" name="t1">
+            </td>
+            <td>
+            <input type="text" name="t2">
+            </td>
+            <td>
+            <input type="text" name="t3">
+            </td>
+            <td>
+            <input type="text" name="t4">
+            </td>
+            <td>
+            <input type="text" name="t5">
+            </td>
+            <td>
+            <input type="text" name="t6">
+            </td>
+            <td>
+            <input type="text" name="t7">
+            </td>
+            </tr>
+            <tr>
+            <td id="day">Wednesday
+            </td>
+            <td>
+            <input type="text" name="w1">
+            </td>
+            <td>
+            <input type="text" name="w2">
+            </td>
+            <td>
+            <input type="text" name="w3">
+            </td>
+            <td>
+            <input type="text" name="w4">
+            </td>
+            <td>
+            <input type="text" name="w5">
+            </td>
+            <td>
+            <input type="text" name="w6">
+            </td>
+            <td>
+            <input type="text" name="w7">
+            </td>
+            </tr>
+            <tr>
+            <td id="day">Thursday
+            </td>
+            <td>
+            <input type="text" name="th1">
+            </td>
+            <td>
+            <input type="text" name="th2">
+            </td>
+            <td>
+            <input type="text" name="th3">
+            </td>
+            <td>
+            <input type="text" name="th4">
+            </td>
+            <td>
+            <input type="text" name="th5">
+            </td>
+            <td>
+            <input type="text" name="th6">
+            </td>
+            <td>
+            <input type="text" name="th7">
+            </td>
+            </tr>
+            <tr>
+            <td id="day">Friday
+            </td>
+            <td>
+            <input type="text" name="f1">
+            </td>
+            <td>
+            <input type="text" name="f2">
+            </td>
+            <td>
+            <input type="text" name="f3">
+            </td>
+            <td>
+            <input type="text" name="f4" >
+            </td>
+            <td>
+            <input type="text" name="f5">
+            </td>
+            <td>
+            <input type="text" name="f6">
+            </td>
+            <td>
+            <input type="text" name="f7" >
+            </td>
+            </tr>
+            </form>
+        </table>
+
+        <div class="button-tray">
+
+        </div>
+        <div class="button-tray">
+            <button id="save-timetable" onclick="submitTT()">Submit</button>
+            <div id="add-new-tt" onclick="editTimeTable(1)">Add new..</div>
+            <!--<div id="edit-tt-button" onclick="editTimeTable(2)">Edit..</div>-->
+        
+        </div>
+        
+    
+    </nav>
+    <section id = "main">
+        <div id="top-panel">
+            <div id="tray">
+                <div id="join-button" onclick="document.getElementById('createNewClassCont').style.display = 'flex'">Create class</div>
+            </div>
+        </div>
+        <div id ="classes">
+            <div class="a-class" style="background-color: #d4d4d4;color:black">
+                <span>Subject</span>
+                <span>Teacher</span>
+                <span>Class-Code</span>
+                <span>Students Enrolled</span>
+            </div>
+        </div>
+    </section>
+    <div id="createNewClassCont">
+        <div id="createNewClass">
+            <div id="closebtn" onclick = "document.getElementById('createNewClassCont').style.display = 'none'"><i class="fa fa-times"></i></div>
+            <div></div>
+            <div id="photo"></div>
+            <div id="content">
+                    <div style = "display: flex; flex-direction:row; width:100%; justify-content:space-around;align-items:center;border-bottom:solid 1px #d4d4d4">
+                        <button id = "detect-coords-1" onclick = "getLocation();document.getElementById('detect-coords-1').innerText='Detected';">Detect 1
+                        </button>
+                        <button id = "detect-coords-2" onclick = "getLocation();document.getElementById('detect-coords-2').innerText='Detected';">Detect 2</button>
+                        <button id = "detect-coords-3" onclick = "getLocation();document.getElementById('detect-coords-3').innerText='Detected'">Detect 3</button>
+                        <button id = "detect-coords-4" onclick = "getLocation();document.getElementById('detect-coords-4').innerText='Detected'">Detect 4</button>
+
+                    </div>
+                    <div></div>
+                         <form id = "new-class-form" action = "/createnewclass" method = "POST">
+                         
+                            <input type = "text" name = "className" placeholder="Class Name: Defense Against Dark Arts">
+                   
+                        
+                            <input type = "text" name = "teacher" placeholder = "Class Teacher Name, defaults to your name">
+                        
+                        
+                    </form>
+                    <button style= "position: absolute; right:30px;bottom:10px;background-color:#2781c2;color:white" onclick="submitNewClass()">Submit</button>
+                
+            </div>
+        </div>
+    </div>
+    <div id="classCont">
+        <div class="c">
+            <div id="closebtn" onclick = "document.getElementById('classCont').style.display = 'none'"><i class="fa fa-times"></i></div>
+            <div id = "details">
+
+            </div>
+            <div id="graph"></div>
+            <div class="tray">
+                 <div class = "mark" ><form id = "activeByLoc" action = "activatebylocation" method = "POST"><div id = 'markByLoc'>Mark using Location</div></form></div>
+                <div class = "mark" style = "display: flex;flex-direction:column;justify-content:center;align-items:space-around">
+                   <form id = "OTP-gen" action = "generateOTP" method = "POST"> <div id = 'generate-OTP'>Activate using OTP</div></form>
+                    <div id = "OTP-generated"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{>footer}}
+    
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src = '/js/index.js'></script>
+<script>
+window.addEventListener("load",(e)=>{
+    console.log('in fetch')
+    fetch('/getmyclasses').then((response)=>{
+            response.json().then((data)=>{
+                for(i in data){
+                    insertNewClass(data[i])
+                }  
+            const c = document.getElementsByClassName('a-class')
+
+            for(j=1;j<data.length+1;j++){
+                c[j].addEventListener('click',()=>{
+                    var el = document.getElementById('generate-OTP')
+                    var el2 = document.getElementById('markByLoc')
+                    $('#classes .a-class').click(function(){
+                        var n = $('#classes .a-class').index(this) ;
+                        el2.addEventListener('click',()=>{
+                            if(data[n-1].activeByLoc == false){
+                                var child = document.createElement("input")
+                                child.type = "hidden"
+                                child.name = "activeByLoc"
+                                child.value = true
+                                var child2 = document.createElement("input")
+                                child2.type = "hidden"
+                                child2.name = "classIndex"
+                                child2.value = n-1
+                                document.getElementById('activeByLoc').appendChild(child)
+                                document.getElementById('activeByLoc').appendChild(child2)
+                                document.getElementById('activeByLoc').submit()
+                            }
+                            else{
+                                var child = document.createElement("input")
+                                child.type = "hidden"
+                                child.name = "activeByLoc"
+                                child.value = false
+                                var child2 = document.createElement("input")
+                                child2.type = "hidden"
+                                child2.name = "classIndex"
+                                child2.value = n-1
+                                document.getElementById('activeByLoc').appendChild(child)
+                                document.getElementById('activeByLoc').appendChild(child2)
+                                document.getElementById('activeByLoc').submit()
+                            }
+                        })
+                        el.addEventListener('click',()=>{
+
+                            if(data[n-1].active == false){
+                                console.log('clicked to activate')
+                                var child = document.createElement("input")
+                                child.type = "hidden"
+                                child.name = "OTP"
+                                child.value = 0
+                                var child2 = document.createElement("input")
+                                child2.type = "hidden"
+                                child2.name = "classIndex"
+                                child2.value = n-1
+                                var child3 = document.createElement("input")
+                                child3.value = true
+                                child3.name = "activate"
+                                child3.type = "hidden"
+
+                                
+                            }
+                            else{
+                                console.log('clicked to deactivate')
+                                var child = document.createElement("input")
+                                child.type = "hidden"
+                                child.name = "OTP"
+                                child.value = 0
+                                var child2 = document.createElement("input")
+                                child2.type = "hidden"
+                                child2.name = "classIndex"
+                                child2.value = n-1
+                                var child3 = document.createElement("input")
+                                child3.value = false
+                                child3.name = "activate"
+                                child3.type = "hidden"
+
+                            }
+                                document.getElementById('OTP-gen').appendChild(child)
+                                document.getElementById('OTP-gen').appendChild(child2)
+                                document.getElementById('OTP-gen').appendChild(child3)
+                                document.getElementById('OTP-gen').submit();
+                        })
+                    showClassContentstoTeacher(data)
+                    })
+                })
+            }
+        }).catch((e)=>{
+                    console.log(e)
+        })
+    })
+})
+
+</script>
+</html>

@@ -1,0 +1,606 @@
+*{
+    margin:0;
+    font-family: Ubuntu, sans serif;
+    color:#2781c2;
+   
+}
+body{
+    background-color: grey;
+    background-image: url('../img/newbg.jpg');
+}
+header{
+    position: fixed;
+    height:80px;
+    width:100vw;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    background-color: white;    z-index: 5;
+}
+
+header #logo-box{
+    cursor: pointer;
+    margin-left: 35px;
+    width:auto;
+    height:auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header #logo-box #logoImage{
+    left:0;
+    height:35px;
+    margin-left:7px;
+    width:50px;;
+    margin-right:3px;
+}
+
+header #logo-box #logoTitle{
+    padding:7px 2px;
+    font-size: 20px;
+}
+
+#login-instead{
+    position: fixed;
+    padding:10px;
+    display:flex;
+    font-size:15px;
+    background-color: #2781c2;
+    color:white;
+    top:20px;
+    z-index:8;
+    cursor: pointer;
+    right:0px;
+    transition: 0.2s ease;
+    border-radius: 10px 0px 0px 10px;
+}
+
+
+.pull-down-contactus{
+    position: fixed;
+    padding:10px;
+    display:flex;
+    width:30px;
+    font-size:15px;
+    background-color: #2781c2;
+    color:white;
+    top:0;
+    z-index:3;
+    cursor: pointer;
+    right:420px;
+    transition: 0.2s ease;
+    border-radius: 0px 0px 10px 10px;
+
+}
+
+
+
+.help-box{
+    height:100px;
+    border-radius: 0px 0px 7px 7px;
+    transform: translateY(-100px);
+    position: fixed;
+    top:0;
+    z-index: 6;
+    right:400px;
+    background-color: #2781c2;
+    color:white;
+    transition: 0.2s ease;
+    width:150px;
+    padding:5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.help-box span{
+    color:white;
+    padding:5px 20px;
+    font-size: 15px;
+    margin: 5px 0px;
+    border: solid 1px white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.help-box span:hover {
+    transition: 0.2s ease;
+    background-color: white;
+    color:#2781c2;
+}
+footer{
+    height:30px;
+    width:100vw;
+    bottom:0;
+    position:fixed;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+footer #contact-tray{
+    padding:10px;
+    margin-right:10px;
+    font-size:15px;
+    background-color:#2781c2;
+    color:white;
+    border-radius: 5px 5px 0px 0px;
+    cursor: pointer;
+    opacity:0.2
+}
+#contact-tray:hover{
+    opacity:1
+}
+
+.buttonsPrevNext{
+    display:flex;
+    justify-content: flex-end;
+    width:100%;
+}
+
+i{
+    font-size:30px;
+    cursor: pointer;
+    text-decoration: none;
+    border:none;
+    background-color: transparent;
+}
+i{
+   
+    color:white;
+}
+.result{
+    background-color: white;
+    padding:6px;
+    font-size: 15px;
+    margin:10px;
+    opacity:1;
+    border-radius: 5px;
+}
+
+#loginForm{
+    position: fixed;
+    z-index:6;
+    right:0px;
+    top:20px;
+    width:250px;
+    padding:0px;
+    transform:translateX(250px);
+    transition: 0.2s ease;
+    background-color: #2781c2;
+}
+#loginForm span{
+    border:none;
+    padding:none;
+    margin:0px
+}
+#loginForm span:hover{
+    background-color: transparent;
+    color:white
+}
+
+#submit-login-form{
+    position: fixed;
+    display:none;
+    right:250px;
+    background-color: #2781c2;
+    color:white;
+    width:70px;
+    top:40px;
+    border-radius: 10px 0px 0px 10px;
+    cursor: pointer;
+}
+
+#submit-login-form button{
+    text-decoration: none;
+    border:none;
+    padding: 10px;
+    font-size: 15px;
+    background-color: transparent;
+    color:white
+}
+
+#slideInTT{
+    position:fixed;
+    right:0px;
+    top:120px;
+    width:40px;
+    background-color: #2781c2;
+    height:200px;
+    border:none;
+    text-decoration: none;
+    transition: 0.5s ease;
+    border-radius: 10px 0px 0px 10px;
+    cursor:pointer;
+}
+#slideInTT h1{
+    font-size:15px;
+    padding:10px;
+    
+    color:white;
+    transform:rotate(-90deg);
+    
+}
+
+nav{
+    height:600px;
+    top:100px;
+    background-color: #2781c2;
+    right:0px;
+    position: fixed;
+    width:800px;
+    border-radius: 20px 0px 0px 20px;
+    transform: translateX(800px);
+    padding:5px;
+    transition: 0.5s ease;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+tr th{
+    font-weight: bold;
+    color:white;
+    height:30px;
+    width:70px;
+    font-size: 20px;
+    border-bottom:solid 1px white;
+    border-right:solid 1px white;
+    border-left:solid 1px white;
+    border-radius: 3px 3px 3px 3px;
+}
+
+td{
+    margin:3px;
+    text-align: center;
+    color:white;
+    width:70px;
+    height:100px;
+}
+
+#day{
+    border-bottom:solid 1px white;
+    border-top:solid 1px white;
+    border-right:solid 1px white;
+    border-radius: 3px 3px 3px 3px;
+}
+
+
+nav .button-tray{
+    position: absolute;
+    right:30px;
+    color:white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    bottom:5px;
+    z-index: 8;
+    font-size: 15px;
+
+}
+#edit-tt-button{
+    color:white;  
+    margin-right: 5px;  
+    border:solid 1px white;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#save-timetable{
+    margin-right: 5px;
+    border-radius:10px;
+    text-decoration:none;
+    border:solid 1px white;
+    padding:10px;
+    color:white;
+    display:none;
+    background:transparent;
+    cursor: pointer;
+}
+#save-timetable:hover{
+    transition: 0.2s ease;
+    background-color: white;
+    color:#2781c2
+}
+
+#edit-timetable{
+    display: none;
+}
+nav #edit-tt-button:hover, nav #edit-tt-button:active{
+    transition: 0.2s ease;
+    background-color: white;
+    color:#2781c2
+}
+nav #add-new-tt{
+    margin-right: 5px;
+    border: solid 1px white;
+    border-radius: 10px;
+    color:white;
+    padding:10px;
+    cursor: pointer;
+}
+#add-new-tt:hover{
+    transition: 0.2s ease;
+    background-color: white;
+    color:#2781c2;
+}
+
+#main{
+    display: grid;
+    position: fixed;
+    top:100px;
+    left:0;
+    height: 100vh;
+    width:100vw;
+    z-index: -1;
+    grid-template-rows: 15% 85%;
+
+}
+
+#main #top-panel{
+   background-color: white;
+   height: 100%;
+   width: 100%;
+}
+
+#main #top-panel #tray{
+    position: absolute;
+    left:50px;
+    top:50px;
+    height: 50px;
+    z-index:101;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:15px;
+}
+
+
+#main #join-button{
+    padding: 10px;
+    border-radius: 10px;
+   
+    border:solid 1px #d4d4d4;
+    cursor: pointer;
+}
+#main #join-button:hover{
+    transition: 0.2s ease;
+    box-shadow: 0px 0px 5px 5px #d4d4d4;
+}
+
+#main #code-new{
+    display: none;
+    margin-left: 40px;
+}
+
+#main #submit-new-class{
+    display: none;
+    background-color: #2781c2;
+    color:white;
+    padding:10px;
+    cursor: pointer;
+    margin-left: -10px;
+    border-radius: 10px;
+}
+#main #classes{
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    overflow-y: scroll;
+    border-top:solid 2px #d4d4d4;
+    flex-direction: column;
+
+}
+
+#main #classes .a-class{
+    cursor:pointer;
+
+    width:100%;
+    border-bottom: solid 1px #d4d4d4;
+    margin:3px;
+    display:grid;
+    color:black;
+    grid-template-columns: 20% 20% 20% 20% ;
+    justify-content: space-around;
+    align-items: center;
+}
+#main #classes .a-class:hover{
+    background-color: #fafafa;
+}
+#main #classes #active-class{
+    background-color: #bfffcd;
+}
+#profile-tab{
+    cursor:pointer;
+    position: fixed;
+    top: 20px;
+    right: 50px;
+    padding:10px;
+    font-size: 15px;
+    z-index: 50;
+    border: solid 1px #d4d4d4;
+    border-radius: 10px;
+}
+
+#profile-tab:hover{
+    box-shadow: 0px 0px 5px 5px #d4d4d4;
+}
+
+#createNewClassCont{
+    position:fixed;
+    z-index:200;
+    height: 100vh;
+    width:100vw;
+    background-color: rgba(0,0,0,0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#createNewClassCont #createNewClass{
+    position: absolute;
+    background-color: white;
+    border-radius: 10px;
+    height:40vw;
+    width:70vh;
+    display: grid;
+    grid-template-rows: 6% 40% 50%;
+    align-items: center;
+
+}
+
+#createNewClass #closebtn{
+    position: absolute;
+    top:10px;
+    right:20px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+#createNewClass #closebtn i{
+    font-size: 20px;
+    color:#2781c2;
+}
+
+#createNewClass #closebtn:hover{
+    opacity: 1;
+    transition: 0.2s ease;
+}
+
+#createNewClass #photo{
+    height:100%;
+    width:100%;
+    background-size: cover;
+    background-image: url('../img/tabletop.jpg');
+}
+
+#createNewClass #content{
+    height:100%;
+    width:100%;
+    display: grid;
+    grid-template-rows: 40% 5% 50%;
+}
+
+#createNewClass #content #new-class-form{
+    display: grid;
+    grid-template-rows:30% 30% 30%;
+    height:100%;
+    width:100%;
+    align-items: center;
+}
+
+#createNewClass #content form{
+    background-color: transparent;
+}
+#createNewClass #content button{
+ height:40px;
+ width:80px;
+text-decoration: none;
+background-color: white;
+border-radius: 10px;
+border:solid 1px #d4d4d4;
+cursor:pointer
+}
+
+#createNewClass #content #new-class-form input{
+    font-size:15px;
+    background-color: white;
+    color:black;
+    border-radius: 10px;
+    border:solid 1px #d4d4d4
+}
+
+#createNewClass #content #new-class-form input:focus{
+    background-color: #d4d4d4;
+}
+
+
+#classCont{
+    position:fixed;
+    z-index:201;
+    height: 100vh;
+    width:100vw;
+    background-color: rgba(0,0,0,0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#classCont .c{
+    
+    position: absolute;
+    height:80%;
+    width:40%;
+    background-color: white;
+    border-radius:10px;
+    
+    display: grid;
+    grid-template-rows:20% 40% 40%;
+    align-items: center;
+
+}
+
+#classCont .c #graph{
+    height:90%;
+    width:100%;
+
+}
+
+.c .tray{
+    height: 100%;
+    width:100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.c .tray .mark{
+    cursor: pointer;
+    height:99%;
+    border: solid 1px #d4d4d4;
+    width:99%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.mark:hover, .mark:focus{
+    background-color: #fafafa;
+    transition: 0.1s ease;
+}
+.mark input{
+    background-color: white;
+    border: solid 1px #d4d4d4;
+    color:black
+}
+.mark button{
+    cursor: pointer;
+    font-size:15px;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 1px #d4d4d4;
+}
+#classCont .c #closebtn{
+    position: absolute;
+    top:10px;
+    right:20px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.c #closebtn i{
+    font-size: 20px;
+    color:#2781c2;
+}
+
+.c #closebtn:hover{
+    opacity: 1;
+    transition: 0.2s ease;
+}
+
+#OTP-generate{
+    display: none;
+}
